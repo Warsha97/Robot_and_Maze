@@ -1,0 +1,85 @@
+digraph state {
+ graph [fontsize=12]
+rankdir=TB;
+"1" -> "4" [label = "visitedRoute(14)", color = "firebrick"];
+"2" -> "4" [label = "visitedRoute(13)", color = "sienna"];
+"3" -> "4" [label = "visitedRoute(12)", color = "SlateBlue4"];
+"3" -> "5" [label = "visitedRoute(11)", color = "black"];
+"4" -> "5" [label = "visitedRoute(10)", color = "#efdf84"];
+"5" -> "5" [label = "visitedRoute(9)", color = "#bdef6b"];
+"5" -> "4" [label = "visitedRoute(8)", color = "#5863ee"];
+"5" -> "3" [label = "visitedRoute(7)", color = "LightSteelBlue1"];
+"5" -> "2" [label = "visitedRoute(6)", color = "gray"];
+"5" -> "1" [label = "visitedRoute(5)", color = "#efdf84"];
+"3" -> "2" [label = "visitedRoute(4)", color = "#bdef6b"];
+"2" -> "2" [label = "visitedRoute(3)", color = "#5863ee"];
+"1" -> "2" [label = "visitedRoute(2)", color = "LightSteelBlue1"];
+"1" -> "1" [label = "visitedRoute(1)", color = "gray"];
+"5" -> "ROOT-NODE" [label = "yCurrent", color = "#efdf84"];
+"1" -> "ROOT-NODE" [label = "xCurrent", color = "#bdef6b"];
+"14" -> "North" [label = "movementsDone", color = "#5863ee"];
+"13" -> "West" [label = "movementsDone", color = "#5863ee"];
+"12" -> "West" [label = "movementsDone", color = "#5863ee"];
+"11" -> "South" [label = "movementsDone", color = "#5863ee"];
+"10" -> "West" [label = "movementsDone", color = "#5863ee"];
+"9" -> "West" [label = "movementsDone", color = "#5863ee"];
+"8" -> "North" [label = "movementsDone", color = "#5863ee"];
+"7" -> "North" [label = "movementsDone", color = "#5863ee"];
+"6" -> "North" [label = "movementsDone", color = "#5863ee"];
+"5" -> "North" [label = "movementsDone", color = "#5863ee"];
+"4" -> "Teleport" [label = "movementsDone", color = "#5863ee"];
+"3" -> "East" [label = "movementsDone", color = "#5863ee"];
+"2" -> "East" [label = "movementsDone", color = "#5863ee"];
+"1" -> "North" [label = "movementsDone", color = "#5863ee"];
+"5" -> "ROOT-NODE" [label = "yCoordinate", color = "LightSteelBlue1"];
+"1" -> "ROOT-NODE" [label = "xCoordinate", color = "gray"];
+"7" -> "4" [label = "Walls", color = "#efdf84"];
+"6" -> "4" [label = "Walls", color = "#efdf84"];
+"6" -> "2" [label = "Walls", color = "#efdf84"];
+"6" -> "1" [label = "Walls", color = "#efdf84"];
+"4" -> "4" [label = "Walls", color = "#efdf84"];
+"4" -> "3" [label = "Walls", color = "#efdf84"];
+"4" -> "2" [label = "Walls", color = "#efdf84"];
+"3" -> "3" [label = "Walls", color = "#efdf84"];
+"2" -> "5" [label = "Walls", color = "#efdf84"];
+"2" -> "3" [label = "Walls", color = "#efdf84"];
+"2" -> "1" [label = "Walls", color = "#efdf84"];
+"1" -> "3" [label = "Walls", color = "#efdf84"];
+"1" -> "5" [label = "Exit", color = "#bdef6b"];
+"1" -> "1" [label = "Entrance", color = "#5863ee"];
+"5" -> "ROOT-NODE" [label = "yAxis", color = "LightSteelBlue1"];
+"4" -> "ROOT-NODE" [label = "yAxis", color = "LightSteelBlue1"];
+"3" -> "ROOT-NODE" [label = "yAxis", color = "LightSteelBlue1"];
+"2" -> "ROOT-NODE" [label = "yAxis", color = "LightSteelBlue1"];
+"1" -> "ROOT-NODE" [label = "yAxis", color = "LightSteelBlue1"];
+"7" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"6" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"5" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"4" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"3" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"2" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"1" -> "ROOT-NODE" [label = "xAxis", color = "gray"];
+"1" [color = "wheat3", style = "filled, solid", shape = "box"]
+"4" [color = "wheat3", style = "filled, solid", shape = "box"]
+"2" [color = "wheat3", style = "filled, solid", shape = "box"]
+"3" [color = "wheat3", style = "filled, solid", shape = "box"]
+"5" [color = "wheat3", style = "filled, solid", shape = "box"]
+"ROOT-NODE" [color = "lightblue", style = "filled, solid", shape = "diamond"]
+"14" [color = "wheat3", style = "filled, solid", shape = "box"]
+"North" [color = "#efdf84", style = "filled, solid", shape = "box"]
+"13" [color = "wheat3", style = "filled, solid", shape = "box"]
+"West" [color = "#efdf84", style = "filled, solid", shape = "box"]
+"12" [color = "wheat3", style = "filled, solid", shape = "box"]
+"11" [color = "wheat3", style = "filled, solid", shape = "box"]
+"South" [color = "#efdf84", style = "filled, solid", shape = "box"]
+"10" [color = "wheat3", style = "filled, solid", shape = "box"]
+"9" [color = "wheat3", style = "filled, solid", shape = "box"]
+"8" [color = "wheat3", style = "filled, solid", shape = "box"]
+"7" [color = "wheat3", style = "filled, solid", shape = "box"]
+"6" [color = "wheat3", style = "filled, solid", shape = "box"]
+"Teleport" [color = "#efdf84", style = "filled, solid", shape = "box"]
+"East" [color = "#efdf84", style = "filled, solid", shape = "box"]
+subgraph "cluster_MOVEMENTS" {node [style=filled,color=white]; label="MOVEMENTS"; style=filled;color=lightgrey; North; South; East; West; Teleport; }
+subgraph "cluster_OUTPUT_MESSAGES" {node [style=filled,color=white]; label="OUTPUT_MESSAGES"; style=filled;color=lightgrey; }
+subgraph "cluster_ANSWER" {node [style=filled,color=white]; label="ANSWER"; style=filled;color=lightgrey; }
+}
